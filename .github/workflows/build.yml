@@ -8,6 +8,8 @@ jobs:
       - uses: subosito/flutter-action@v2
         with:
           flutter-version: '3.24.0'
+         - run: sudo apt-get install unzip
+      - run: unzip -o project.zip && rm project.zip  
       - run: flutter pub get
       - run: flutter build apk --release
       - uses: actions/upload-artifact@v4
